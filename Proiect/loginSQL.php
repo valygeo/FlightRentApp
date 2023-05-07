@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Setează sesiunea și redirecționează către pagina principală a aplicației
       session_start();
       $_SESSION["ID"] = $user["ID"];
+       $_SESSION["FullName"] = $user["FullName"];
       header("Location: home.php");
       exit();
     } else {

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -44,4 +45,29 @@
   }
 ?>
     </header>
-   
+<?php
+include 'dbConnection.php';
+
+// Extrage toate zborurile din baza de date
+$sql = "SELECT * FROM tickets";
+$result = mysqli_query($conn, $sql);
+
+// Afiseaza zborurile intr-un tabel HTML
+echo "<table>";
+echo "<tr><th>Locatia de plecare</th><th>Destinatia</th><th>Data de plecare</th><th>Clasa de calatorie</th><th>Pret</th><th></th></tr>";
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "<tr>";
+    echo "<td>" . $row["Source"] . "</td>";
+    echo "<td>" . $row["Destination"] . "</td>";
+    echo "<td>" . $row["DepartureDate"] . "</td>";
+    echo "<td>" . $row["Class"] . "</td>";
+    echo "<td>" . $row["Price"] . "</td>";
+   echo '<td><a class="button" href="reserveForm.php?id=' . $row["TicketID"] . '">Rent</a></td>';
+echo "</tr>";
+}
+echo "</table>";
+
+// Elibereaza rezultatul si inchide conexiunea cu baza de date
+mysqli_free_result($result);
+mysqli_close($conn);
+?>

@@ -4,6 +4,93 @@
   box-sizing: border-box;
   font-family: "Times New Roman", Times, serif;
 }
+/* Stilizare pentru dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Stilizare tabela */
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* Stilizare pentru butonul dropdown */
+.dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Stilizare pentru continutul dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Stilizare pentru linkurile din dropdown */
+.dropdown-content button {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Stilizare pentru linkurile din dropdown la hover */
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}
+
+/* Afisare dropdown cand utilizatorul face hover pe buton */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 body {
   display: flex;
   justify-content: center;
